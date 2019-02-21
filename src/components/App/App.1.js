@@ -3,36 +3,33 @@ import './App.css';
 
 class App extends Component {
   state = {
-    newRun: '',
+    runInput: 0,
     recentRun: 0,
     longestRun: 0,
   }
 
 
   handleMilesChange = (event) => {
+    // console.log('input',event.target.value);
     this.setState({
-      newRun: event.target.value
-    })
-   
+      runInput: Number(event.target.value),
+    });
   }
 
 
   handleClick = () => {
     console.log('submit button clicked');
-    if(Number(this.state.newRun) > Number(this.state.longestRun)){
+    if (this.state.runInput > this.state.longestRun) {
       this.setState({
-        recentRun: this.state.newRun,
-        longestRun: this.state.newRun,
-        newRun: '',
-      })
+        recentRun: this.state.runInput,
+        longestRun: this.state.runInput,
+      });
     } else {
       this.setState({
-        recentRun: this.state.newRun,
-        longestRun: this.state.longestRun,
-        newRun: '',
-      })
+        recentRun: this.state.runInput,
+      });
     }
-    
+    console.log(this.state);
   }
 
 
@@ -46,15 +43,18 @@ class App extends Component {
 
           <input
             type="number"
-            value={this.state.newRun}
             placeholder="Miles Ran"
             onChange={this.handleMilesChange}
+          // value={this.state.user.name}
           />
-
           <button onClick={this.handleClick}>Submit</button>
           
-          <div>Recent Run: {this.state.recentRun}</div>
-          <div> Longest Run: {this.state.longestRun}</div>
+          <div className="run">
+            Recent Run: {this.state.recentRun}
+          </div>
+          <div className="run">
+            Longest Run: {this.state.longestRun}
+          </div>
        
       </div>
     

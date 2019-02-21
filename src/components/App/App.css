@@ -31,3 +31,34 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  background-color: rgb(7, 191, 247); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+}
+
+input {
+  background-color: rgb(230, 236, 238); /* Green */
+  border: none;
+  color: rgb(80, 78, 78);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.parent {
+  text-align: center;
+}
+
+.run {
+  margin: 10px;
+}
